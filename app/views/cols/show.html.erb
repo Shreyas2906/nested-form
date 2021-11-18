@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @col.title %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @col.answer %>
+</p>
+<% @col.answers.each do |answer| %>
+	<p> <%= answer.title %></p>
+<%end %>
+
+<%= link_to 'Edit', edit_col_path(@col) %> |
+<%= link_to 'Back', cols_path %>

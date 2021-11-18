@@ -1,0 +1,34 @@
+<%= nested_form_for @col do |f| %>
+<% if @col.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@col.errors.count, "error") %> prohibited this col from being saved:</h2>
+
+      
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :answer %>
+    <%= f.text_area :answer %>
+  </div>
+
+ 
+  <ul>
+    <%= f.fields_for :answers do |answer_form| %>
+    <%= answer_form.text_field :title %>
+    <%= answer_form.link_to_remove "Remove this task" %>
+    <% end %>
+  <p><%= f.link_to_add "Add a answer", :answers %></p>
+  </ul>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

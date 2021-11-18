@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Answer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cols.each do |col| %>
+      <tr>
+        <td><%= col.title %></td>
+        <td><%= col.answer %></td>
+        <td><%= link_to 'Show', col %></td>
+        <td><%= link_to 'Edit', edit_col_path(col) %></td>
+        <td><%= link_to 'Destroy', col, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Col', new_col_path %>
