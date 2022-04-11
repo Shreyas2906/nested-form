@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	root 'questions#index'
+
+
   resources :courses
   resources :trades
   resources :branches
